@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/ubi:8.5
+FROM registry.access.redhat.com/ubi8/ubi:latest
 COPY 1.sh /home/
 RUN ls -la /etc/pki/entitlement
 RUN rm /etc/rhsm-host
