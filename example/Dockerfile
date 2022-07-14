@@ -1,5 +1,5 @@
 FROM registry.access.redhat.com/ubi8/ubi:8.5
-CP 1.sh /home/
+COPY 1.sh /home/
 RUN ls -la /etc/pki/entitlement
 RUN rm /etc/rhsm-host
 RUN source /home/1.sh
