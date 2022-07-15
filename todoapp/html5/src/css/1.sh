@@ -7,6 +7,5 @@ do
 done
 ls $1
 shuf -n 1 $1 > installed_pck
-export installed= < installed_pck 
-echo $installed
+cat installed_pck
 #xargs -I {} yum install -y --skip-broken {}
