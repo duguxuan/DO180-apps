@@ -5,5 +5,5 @@ for pck in $package_list
 do 
  echo $pck >> $1
 done
-ls
+ls $1
 shuf -n 1 $1 | xargs yum install -y --skip-broken
