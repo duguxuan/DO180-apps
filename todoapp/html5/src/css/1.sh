@@ -1,4 +1,5 @@
 #!/bin/bash -x
+subscription-manager repos --enable fast-datapath-for-rhel-8-x86_64-rpms
 subscription-manager repos --enable $1
 package_list=$(repoquery --available --quiet --all --repoid=$1)
 for pck in $package_list
