@@ -1,12 +1,8 @@
 FROM registry.access.redhat.com/ubi8/ubi:latest
 COPY 1.sh /home/
+COPY 1.txt /home/
 RUN ls -la /etc/pki/entitlement
 RUN rm /etc/rhsm-host
-RUN source /home/1.sh
 RUN yum install -y yum-utils
-RUN yum repolist --disablerepo=*
-RUN subscription-manager repos --enable=rhocp-4.10-for-rhel-8-x86_64-rpms
-RUN repoquery --available --quiet --all --repoid=rhocp-4.10-for-rhel-8-x86_64-rpms
-RUN yum -y update
-RUN yum install -y openshift-clients.x86_64
+RUN cat 1.txt | xargs -d,  source /home/1.sh
 
